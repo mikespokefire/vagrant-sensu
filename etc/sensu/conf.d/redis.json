@@ -1,0 +1,7 @@
+{
+  "redis": {
+    "host": "192.168.40.10",
+    "port": 6379,
+    "auto_reconnect": true
+  }
+}

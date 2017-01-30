@@ -1,0 +1,7 @@
+{
+  "client": {
+    "subscriptions": [
+      "test-subscription"
+    ]
+  }
+}
