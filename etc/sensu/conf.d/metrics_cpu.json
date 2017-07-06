@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "cpu_metrics": {
+      "type": "metric",
+      "command": "metrics-cpu.rb",
+      "standalone": true,
+      "interval": 10,
+      "handler": "debug"
+    }
+  }
+}

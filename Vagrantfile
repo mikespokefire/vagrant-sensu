@@ -25,10 +25,14 @@ Vagrant.configure(2) do |config|
       sudo systemctl restart redis-server
 
       sudo apt-get install -u sensu
+      sudo sensu-install -p cpu-checks
+
       sudo cp /vagrant/etc/sensu/conf.d/api.json /etc/sensu/conf.d/api.json
       sudo cp /vagrant/etc/sensu/conf.d/redis.json /etc/sensu/conf.d/redis.json
       sudo cp /vagrant/etc/sensu/conf.d/transport.json /etc/sensu/conf.d/transport.json
       sudo cp /vagrant/etc/sensu/conf.d/client.json /etc/sensu/conf.d/client.json
+
+      sudo cp /vagrant/etc/sensu/conf.d/metrics_cpu.json /etc/sensu/conf.d/metrics_cpu.json
 
       sudo systemctl enable sensu-server
       sudo systemctl restart sensu-server
@@ -62,9 +66,13 @@ Vagrant.configure(2) do |config|
         sudo apt-get update
 
         sudo apt-get install -u sensu
+        sudo sensu-install -p cpu-checks
+
         sudo cp /vagrant/etc/sensu/conf.d/redis.json /etc/sensu/conf.d/redis.json
         sudo cp /vagrant/etc/sensu/conf.d/transport.json /etc/sensu/conf.d/transport.json
         sudo cp /vagrant/etc/sensu/conf.d/client.json /etc/sensu/conf.d/client.json
+
+        sudo cp /vagrant/etc/sensu/conf.d/metrics_cpu.json /etc/sensu/conf.d/metrics_cpu.json
 
         sudo systemctl enable sensu-client
         sudo systemctl restart sensu-client
